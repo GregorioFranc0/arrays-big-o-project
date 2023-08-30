@@ -9,3 +9,19 @@ function randomNumberArr(max) {
 
     return res;
 }
+
+function mapTest(arr) {
+    let newArr = arr.slice();
+    newArr.map(() => {
+      newArr.pop();
+    });
+    return newArr;
+  }
+  
+  let n = 100000;
+  let testArray = Array.from({ length: n }, (_, index) => index); // Creating an array [0, 1, 2, ..., n-1]
+  
+  console.time(`mapTest(${n}): `);
+  mapTest(testArray);
+  console.timeEnd(`mapTest(${n}): `);
+  
